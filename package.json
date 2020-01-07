@@ -17,7 +17,8 @@
     "preprepare-submission": "rimraf submission",
     "prepare-submission": "run-s -n -c prettier mkdir copy-src eslint-to-file test-to-file stylelint-to-file zip",
     "prezip": "rimraf submission.zip",
-    "zip": "bestzip submission.zip submission/*"
+    "zip": "bestzip submission.zip submission/*",
+    "create-assignment-zip": "bestzip assignment.zip ./.vscode ./src ./.eslintrc.js ./.npmrc ./.prettierrc.js ./stylelintrc.js package.json"
   },
   "license": "BSD-2-Clause",
   "devDependencies": {
