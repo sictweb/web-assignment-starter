@@ -10,8 +10,6 @@ module.exports = {
     ecmaVersion: 6
   },
   rules: {
-    /* Integrate prettier format warnings so people learn */
-    'prettier/prettier': ['warn'],
     /* Prefer === to == and !== to !=, but only warn */
     eqeqeq: 'warn',
     /* Prefer ; use, but only warn (prettier will fix) */
