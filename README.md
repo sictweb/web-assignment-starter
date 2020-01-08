@@ -31,6 +31,12 @@ There are a number of npm scripts to automate tasks, including:
 - `npm test` to run Jest
 - `npm test-watch` to run Jest in [watch mode](https://jestjs.io/docs/en/cli.html#--watch) (automatically re-runs tests)
 
+When running tests, if you want to run a single test, pass extra filename info:
+
+```
+npm test file1
+```
+
 See [package.json](package.json) for a complete list.
 
 ## Adding Tests
