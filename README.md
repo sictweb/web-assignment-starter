@@ -90,19 +90,32 @@ command:
 ```
 $ npm run create-assignment
 
-> web-assignment-starter@1.0.0 create-assignment-pdf web-assignment-starter/package.json
+> web222-assignment-1@1.0.0 clean /assignment/package.json
+> rimraf assignment assignment.pdf assignment.zip
+
+
+> web222-assignment-1@1.0.0 create-assignment-root /assignment/package.json
+> mkdirp assignment
+
+
+> web222-assignment-1@1.0.0 create-assignment-pdf /assignment/package.json
 > markdown-pdf -o assignment.pdf README.md
 
 
-> web-assignment-starter@1.0.0 create-assignment-zip web-assignment-starter/package.json
-> bestzip assignment.zip ./.vscode ./src ./.eslintrc.js ./.npmrc ./.prettierrc.js ./stylelintrc.js package.json assignment.pdf
+> web222-assignment-1@1.0.0 create-assignment-files /assignment/package.json
+> copyfiles ./.vscode/**/* ./src/**/* ./.eslintrc.js ./.npmrc ./.prettierrc.js ./stylelintrc.js package.json assignment.pdf assignment
 
-Writing ./.vscode, ./src, ./.eslintrc.js, ./.npmrc, ./.prettierrc.js, ./stylelintrc.js, package.json, assignment.pdf to assignment.zip...
+
+> web222-assignment-1@1.0.0 create-assignment-zip /assignment/package.json
+> bestzip assignment.zip assignment/
+
+Writing assignment/ to assignment.zip...
 zipped!
 ```
 
-This command will generate a PDF from your [README.md](README.md) (see below for
-more details), and also add the following files/folders to `assignment.zip`:
+This command will do a number of things, including generate a PDF from your
+[README.md](README.md) (see below for more details), and also add the following
+files/folders to `assignment.zip`:
 
 - `.vscode/`
 - `src/`

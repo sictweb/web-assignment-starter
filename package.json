@@ -18,10 +18,12 @@
     "prepare-submission": "run-s -n -c prettier mkdir copy-src eslint-to-file test-to-file stylelint-to-file zip",
     "prezip": "rimraf submission.zip",
     "zip": "bestzip submission.zip submission/*",
-    "create-assignment": "run-s --print-name create-assignment-pdf create-assignment-zip",
+    "create-assignment": "run-s --print-name clean create-assignment-root create-assignment-pdf create-assignment-files create-assignment-zip",
+    "create-assignment-root": "mkdirp assignment",
+    "create-assignment-files": "copyfiles ./.vscode/**/* ./src/**/* ./.eslintrc.js ./.npmrc ./.prettierrc.js ./stylelintrc.js package.json assignment.pdf assignment",
     "create-assignment-pdf": "markdown-pdf -o assignment.pdf README.md",
-    "create-assignment-zip": "bestzip assignment.zip ./.vscode ./src ./.eslintrc.js ./.npmrc ./.prettierrc.js ./stylelintrc.js package.json assignment.pdf",
-    "clean": "rimraf node_modules assignment.pdf assignment.zip"
+    "create-assignment-zip": "bestzip assignment.zip assignment/",
+    "clean": "rimraf assignment assignment.pdf assignment.zip"
   },
   "license": "BSD-2-Clause",
   "devDependencies": {
